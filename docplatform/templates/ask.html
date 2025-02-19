@@ -1,0 +1,18 @@
+<!-- templates/ask.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ask a Question</title>
+</head>
+<body>
+    <h1>Ask a Question</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="question">Your Question:</label><br>
+        <input type="text" id="question" name="question" required><br><br>
+        <label for="context">Document Context (paste text here):</label><br>
+        <textarea id="context" name="context" rows="10" cols="80" required></textarea><br><br>
+        <button type="submit">Get Answer</button>
+    </form>
+</body>
+</html>

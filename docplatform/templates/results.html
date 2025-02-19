@@ -1,0 +1,16 @@
+<!-- templates/results.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Summary Results</title>
+</head>
+<body>
+    <h1>Document Summary</h1>
+    <p>{{ summary }}</p>
+    <hr>
+    <h2>Extracted Text (Context for Q&A)</h2>
+    <p>{{ text }}</p>
+    <hr>
+    <a href="{% url 'ask_question' %}">Ask a Question About This Document</a>
+</body>
+</html>
