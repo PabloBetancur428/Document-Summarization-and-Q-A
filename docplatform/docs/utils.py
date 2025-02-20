@@ -20,15 +20,15 @@ def extract_text(file_path):
 
 #Summarization pipeline
 
-summarizer = pipeline("summarization", model="t5-small")
+summarizer = pipeline("summarization", model="google/pegasus-xsum")
 
 def generate_summary(text):
-    summary_list = summarizer(text, max_length=150, min_length=40, do_sample=False)
+    summary_list = summarizer(text, max_length=200, min_length=60, do_sample=False)
     return summary_list[0]['summary_text']
 
 # Q&A Pipeline
 
-qa_pipeline = pipeline("question-answering", model="distilbert-base-cased-distilled-squad")
+qa_pipeline = pipeline("question-answering", model="bert-large-uncased-whole-word-masking-finetuned-squad")
 
 def answer_question(context, question):
     result = qa_pipeline({
